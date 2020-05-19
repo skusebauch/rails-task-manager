@@ -3,8 +3,11 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
-      <%= task.completed %> -
-      <%= task.title %>:
+      <% if task.completed %>
+        ☑️ <%= task.title %>
+      <% else %>
+        🤯 <%= task.title %>:
+      <% end %>
       <%= task.details %>
     </li>
   <% end %>
