@@ -1,6 +1,11 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
-<p>status: <%= @task.completed%></p>
+<p> <% if @task.completed %>
+      ✅ This task is completed
+    <% else %>
+      ❎ This task is not completed yet
+    <% end %>
+</p>
 <%= link_to "✍︎ Edit task", edit_path %>
 <%= link_to "🔙 Back to List", tasks_path %>
 

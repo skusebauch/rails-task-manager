@@ -1,6 +1,6 @@
 <h2>Edit Task</h2>
 
-<%#<%= form_for(@task) do |f| %>
+<%#= form_for(@task) do |f| %>
   <%#= f.label :title %>
   <%#= f.text_field :title %>
   <%#= f.label :details %>
@@ -9,9 +9,9 @@
   <%#= f.check_box :completed %>
   <%#= f.submit %>
 <%# end %>
+
+<%# would work without tasl: @task as well - just in case if we would use other instance variables for form %>
 <%= render 'form', task: @task %>
 
 <hr>
-<%= link_to tasks_path do %>
-  <i class="fa fa-history"></i> Back to list
-<% end %>
+<%= link_to "🔙 Back to list", task_path %>

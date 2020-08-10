@@ -7,3 +7,9 @@
   <%#= f.text_field :details %>
   <%#= f.submit %>
 <%# end %>
+
+<h1>New task</h1>
+
+<%= render 'form', task: @task %>
+<%= link_to "🔙 Back to list", task_path %>
+<hr>
