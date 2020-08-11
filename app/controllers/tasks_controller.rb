@@ -12,10 +12,12 @@ class TasksController < ApplicationController
   end
 
   def new
+    # serves an empty form
     @task = Task.new
   end
 
   def create
+    # handle request coming from a form - create restaurant in db
     @task = Task.new(task_params)
     if @task.save
       redirect_to tasks_path
@@ -25,11 +27,13 @@ class TasksController < ApplicationController
   end
 
   def edit
+    # serves an empty edit form
     # refactor - not dry
     # @task = Task.find(params[:id])
   end
 
   def update
+    # handles request coming from the edit form
     # refactor not dry
     # @task = Task.find(params[:id])
     if @task.update(task_params)
@@ -53,7 +57,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    # strong params
+    # strong params - returned a cleared params object
     params.require(:task).permit(:title, :details, :completed)
   end
 end
